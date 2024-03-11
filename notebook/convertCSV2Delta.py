@@ -11,8 +11,11 @@ df.printSchema()
 
 # COMMAND ----------
 
-clientID = "<ClientID>"
-clientSecret = "<ClientSecret>"
+import os
+
+clientID = os.getenv("clientID")
+clientSecret = os.getenv("clientSecret")
+
 storageAccount = "epamwebinar1"
 
 spark.conf.set("fs.azure.account.auth.type."+storageAccount+".dfs.core.windows.net", "OAuth")
@@ -23,12 +26,11 @@ spark.conf.set("fs.azure.account.oauth2.client.endpoint."+storageAccount+".dfs.c
 
 
 
-df.write.format("delta").save("abfss://data@"+storageAccount+".dfs.core.windows.net/testdata")
+
 
 # COMMAND ----------
 
-testdata = "abfss://data@"+storageAccount+".dfs.core.windows.net/testdata"
-print(testdata)
+df.write.format("delta").mode("overwrite").save("abfss://data@"+storageAccount+".dfs.core.windows.net/testdata")
 
 # COMMAND ----------
 
