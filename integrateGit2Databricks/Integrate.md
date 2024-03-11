@@ -4,7 +4,7 @@
 ## Link GITHUB with Databricks
 1. Go to user setings
 
-![User Setting](../pictures/UserSetting.jpg)
+![User Setting](../pictures/UserSettings.jpg)
 
 2. Choose Linked Account -> Git Integration
    
