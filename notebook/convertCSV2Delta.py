@@ -11,8 +11,8 @@ df.printSchema()
 
 # COMMAND ----------
 
-clientID = "d5b4eabe-68bc-4468-a3c3-493c54ae67e1"
-clientSecret = "iid8Q~uJwubpOVYsC7vbNk8VJU2.OKWohemhsbtU"
+clientID = "<ClientID>"
+clientSecret = "<ClientSecret>"
 storageAccount = "epamwebinar1"
 
 spark.conf.set("fs.azure.account.auth.type."+storageAccount+".dfs.core.windows.net", "OAuth")
