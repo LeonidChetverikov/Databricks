@@ -184,9 +184,6 @@
                 "[resourceId('Microsoft.Storage/storageAccounts', 'epamwebinar1')]"
             ],
             "properties": {
-                "immutableStorageWithVersioning": {
-                    "enabled": false
-                },
                 "defaultEncryptionScope": "$account-encryption-key",
                 "denyEncryptionScopeOverride": false,
                 "publicAccess": "None"
