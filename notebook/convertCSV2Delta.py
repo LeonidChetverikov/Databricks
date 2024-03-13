@@ -36,10 +36,15 @@ df.write.format("delta").mode("overwrite").save("abfss://data@"+storageAccount+"
 
 # MAGIC %sql
 # MAGIC CREATE TABLE IF NOT EXISTS testdata 
-# MAGIC USING parquet
+# MAGIC USING DELTA
 # MAGIC LOCATION 'abfss://data@epamwebinar1.dfs.core.windows.net/testdata';
 # MAGIC
 # MAGIC ALTER TABLE testdata SET TBLPROPERTIES(delta.timeUntilArchived = '30 days') ;
+
+# COMMAND ----------
+
+# MAGIC %sql
+# MAGIC SHOW TBLPROPERTIES testdata;
 
 # COMMAND ----------
 
